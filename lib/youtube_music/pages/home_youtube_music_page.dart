@@ -14,7 +14,7 @@ class _HomeYoutubeMusicPageState extends State<HomeYoutubeMusicPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Image.asset('assets/youtube/logo.png'),
+        title: Image.asset('assets/youtube_music/logo.png'),
         centerTitle: false,
         actions: [
           IconButton(
@@ -27,7 +27,7 @@ class _HomeYoutubeMusicPageState extends State<HomeYoutubeMusicPage> {
           ),
           IconButton(
             onPressed: () {},
-            icon: Image.asset('assets/youtube/avatar.png'),
+            icon: Image.asset('assets/youtube_music/avatar.png'),
           ),
         ],
       ),
@@ -35,7 +35,7 @@ class _HomeYoutubeMusicPageState extends State<HomeYoutubeMusicPage> {
       body: Stack(
         children: [
           Image.asset(
-            'assets/youtube/background.png',
+            'assets/youtube_music/background.png',
             fit: BoxFit.cover,
           ),
           SafeArea(
@@ -102,7 +102,7 @@ class _HomeYoutubeMusicPageState extends State<HomeYoutubeMusicPage> {
                   padding: const EdgeInsets.all(16.0),
                   child: Row(
                     children: [
-                      Image.asset('assets/youtube/avatar.png'),
+                      Image.asset('assets/youtube_music/avatar.png'),
                       const SizedBox(
                         width: 24,
                       ),
@@ -143,7 +143,7 @@ class _HomeYoutubeMusicPageState extends State<HomeYoutubeMusicPage> {
                     children: [
                       Column(
                         children: [
-                          Image.asset('assets/youtube/singer1.png'),
+                          Image.asset('assets/youtube_music/singer1.png'),
                           const SizedBox(
                             height: 12,
                           ),
@@ -171,7 +171,7 @@ class _HomeYoutubeMusicPageState extends State<HomeYoutubeMusicPage> {
                       ),
                       Column(
                         children: [
-                          Image.asset('assets/youtube/singer2.png'),
+                          Image.asset('assets/youtube_music/singer2.png'),
                           const SizedBox(
                             height: 12,
                           ),
@@ -199,7 +199,7 @@ class _HomeYoutubeMusicPageState extends State<HomeYoutubeMusicPage> {
                       ),
                       Column(
                         children: [
-                          Image.asset('assets/youtube/singer3.png'),
+                          Image.asset('assets/youtube_music/singer3.png'),
                           const SizedBox(
                             height: 12,
                           ),
@@ -258,7 +258,8 @@ class _HomeYoutubeMusicPageState extends State<HomeYoutubeMusicPage> {
                   child: ListView(
                     children: [
                       ListTile(
-                        leading: Image.asset('assets/youtube/singer4.png'),
+                        leading:
+                            Image.asset('assets/youtube_music/singer4.png'),
                         title: const Text(
                           'Diamonds',
                           style: TextStyle(
@@ -281,7 +282,8 @@ class _HomeYoutubeMusicPageState extends State<HomeYoutubeMusicPage> {
                         ),
                       ),
                       ListTile(
-                        leading: Image.asset('assets/youtube/singer5.png'),
+                        leading:
+                            Image.asset('assets/youtube_music/singer5.png'),
                         title: const Text(
                           'Diamonds',
                           style: TextStyle(
@@ -304,7 +306,8 @@ class _HomeYoutubeMusicPageState extends State<HomeYoutubeMusicPage> {
                         ),
                       ),
                       ListTile(
-                        leading: Image.asset('assets/youtube/singer6.png'),
+                        leading:
+                            Image.asset('assets/youtube_music/singer6.png'),
                         title: const Text(
                           'Diamonds',
                           style: TextStyle(
