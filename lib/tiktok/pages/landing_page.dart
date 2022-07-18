@@ -4,8 +4,8 @@ import 'package:mobile_showcases/tiktok/pages/profile_page.dart';
 import 'package:mobile_showcases/tiktok/pages/search_page.dart';
 import 'package:mobile_showcases/tiktok/pages/tiktok_home_page.dart';
 
-class LandingPage extends StatelessWidget {
-  const LandingPage({Key? key}) : super(key: key);
+class LandingPageTikTok extends StatelessWidget {
+  const LandingPageTikTok({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
