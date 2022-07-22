@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_showcases/landing_page/pages/landing_page.dart';
+import 'package:macos_ui/macos_ui.dart';
+import 'package:mobile_showcases/mac_app/pages/mac_app_home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +12,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return const MacosApp(
       debugShowCheckedModeBanner: false,
-      home: LandingPage(),
+      home: MacAppHomePage(),
     );
   }
 }
