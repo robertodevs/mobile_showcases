@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_showcases/nike/style/nike_colors.dart';
+import 'package:mobile_showcases/utils.dart';
 
 class AmazonHomeScreen extends StatelessWidget {
   const AmazonHomeScreen({Key? key}) : super(key: key);
@@ -80,8 +81,8 @@ class AmazonHomeScreen extends StatelessWidget {
               ),
               _buildHeader(),
               _buildSignInCard(),
-              const SizedBox(
-                height: 8,
+              SizedBox(
+                height: screenAwareHeight(context, 8),
               ),
               _buildListTiles(),
               const SizedBox(
@@ -97,34 +98,48 @@ class AmazonHomeScreen extends StatelessWidget {
                       child: Text('Back to School'),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            'assets/amazon/school01.png',
-                          ),
-                          const SizedBox(
-                            width: 2,
-                          ),
-                          Image.asset(
-                            'assets/amazon/school02.png',
-                          ),
-                        ],
+                      padding: EdgeInsets.all(
+                        screenAwareHeight(context, 8),
                       ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(left: 8, right: 8, bottom: 16),
-                      child: Row(
+                      child: Column(
                         children: [
-                          Image.asset(
-                            'assets/amazon/school03.png',
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Image.asset(
+                                  'assets/amazon/school01.png',
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              SizedBox(
+                                width: screenAwareWidth(context, 2),
+                              ),
+                              Expanded(
+                                child: Image.asset(
+                                  'assets/amazon/school02.png',
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                            ],
                           ),
-                          const SizedBox(
-                            width: 2,
-                          ),
-                          Image.asset(
-                            'assets/amazon/school04.png',
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Image.asset(
+                                  'assets/amazon/school03.png',
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              SizedBox(
+                                width: screenAwareWidth(context, 2),
+                              ),
+                              Expanded(
+                                child: Image.asset(
+                                  'assets/amazon/school04.png',
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),

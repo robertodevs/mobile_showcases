@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_showcases/amazon/pages/amazon_home_screen.dart';
+import 'package:mobile_showcases/furniture/pages/furniture_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp()
+      // DevicePreview(
+      //     enabled: true,
+      //     tools: const [
+      //       ...DevicePreview.defaultTools,
+      //     ],
+      //     builder: (context) {
+      //       return const MyApp();
+      //     }),
+      );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,9 +20,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: AmazonHomeScreen(),
+    return AnimatedTheme(
+      data: ThemeData.light(),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: FurnitureScreen(),
+      ),
     );
   }
 }
