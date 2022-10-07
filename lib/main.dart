@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_showcases/furniture/pages/furniture_screen.dart';
+import 'package:mobile_showcases/mcdonalds/pages/mcdonalds_home_screen.dart';
 
 void main() {
   runApp(const MyApp()
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       data: ThemeData.light(),
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: FurnitureScreen(),
+        home: McDonaldsHomeScreen(),
       ),
     );
   }
