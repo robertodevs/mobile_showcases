@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class VectaryHomePage extends StatelessWidget {
   const VectaryHomePage({Key? key}) : super(key: key);
@@ -53,14 +52,14 @@ class VectaryHomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 450,
-              child: WebView(
-                javascriptMode: JavascriptMode.unrestricted,
-                initialUrl: 'https://app.vectary.com/p/67DYztYygdLBUQzEomj5QH',
-                //initialUrl: 'https://app.vectary.com/p/1258svli4o5B26CZ6o86Zf',
-              ),
-            ),
+            // const SizedBox(
+            //   height: 450,
+            //   child: WebView(
+            //     javascriptMode: JavascriptMode.unrestricted,
+            //     initialUrl: 'https://app.vectary.com/p/67DYztYygdLBUQzEomj5QH',
+            //     //initialUrl: 'https://app.vectary.com/p/1258svli4o5B26CZ6o86Zf',
+            //   ),
+            // ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 12),
               child: Text(

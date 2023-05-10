@@ -99,7 +99,7 @@ class _CocaColaHomePageState extends State<CocaColaHomePage> {
           ),
           DotsIndicator(
             dotsCount: 3,
-            position: currentProduct,
+            position: currentProduct.toInt(),
           ),
           const SizedBox(
             height: 40,
