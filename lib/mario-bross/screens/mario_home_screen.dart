@@ -15,7 +15,10 @@ class MarioHomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.notifications_outlined, color: Colors.black),
+            icon: const Icon(
+              Icons.notifications_outlined,
+              color: Colors.black,
+            ),
           )
         ],
       ),
@@ -25,86 +28,70 @@ class MarioHomeScreen extends StatelessWidget {
             'assets/mario-bross/logo.png',
             width: 200,
           ),
-          // create a animated grid view
-
-          SafeArea(
-            child: ListView(
-              children: [
-                const SizedBox(height: 30),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      _buildCharacterCard(
-                        context,
-                        name: 'Mario',
+          ListView(
+            children: [
+              const SizedBox(
+                height: 40,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    _buildCharacterCard(context,
                         image: 'assets/mario-bross/mario.png',
-                        color: marioRed,
-                      ),
-                      _buildCharacterCard(
-                        context,
-                        name: 'Luigi',
+                        name: 'Mario Bross',
+                        color: marioRed),
+                    _buildCharacterCard(context,
                         image: 'assets/mario-bross/luigi.png',
-                        color: luigiGreen,
-                      ),
-                    ],
-                  ),
+                        name: 'Luigi Bross',
+                        color: luigiGreen),
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      _buildCharacterCard(
-                        context,
-                        name: 'Peach',
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    _buildCharacterCard(context,
                         image: 'assets/mario-bross/peach.png',
-                        color: peachPink,
-                      ),
-                      _buildCharacterCard(
-                        context,
-                        name: 'Toad',
+                        name: 'Peach',
+                        color: peachPink),
+                    _buildCharacterCard(context,
                         image: 'assets/mario-bross/bowser.png',
-                        color: bowserYellow,
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
+                        name: 'Bowswer',
+                        color: bowserYellow),
+                  ],
+                ),
+              )
+            ],
           )
         ],
       ),
     );
   }
 
-  Widget _buildCharacterCard(
-    BuildContext context, {
-    required String name,
-    required String image,
-    required Color color,
-  }) {
+  Widget _buildCharacterCard(BuildContext context,
+      {required String image, required String name, required Color color}) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => CharacterDetailScreen(
-              name: name,
-              image: image,
-              color: color,
-            ),
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => CharacterDetailScreen(
+            name: name,
+            image: image,
+            color: color,
           ),
-        );
-      },
+        ),
+      ),
       child: SizedBox(
         height: 240,
         width: 175,
         child: Stack(
-          fit: StackFit.expand,
           children: [
             Positioned(
+              left: 0,
               bottom: 0,
               child: Container(
                 height: 193,
@@ -118,11 +105,13 @@ class MarioHomeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      const SizedBox(height: 30),
-                      Image.asset(
-                        'assets/mario-bross/skills-card.png',
+                      const SizedBox(
+                        height: 40,
                       ),
-                      const Expanded(child: SizedBox()),
+                      Image.asset('assets/mario-bross/skills-card.png'),
+                      const Expanded(
+                        child: SizedBox(),
+                      ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -134,7 +123,9 @@ class MarioHomeScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const SizedBox(height: 5),
+                          const SizedBox(
+                            height: 5,
+                          ),
                           const Text(
                             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc',
                             style: TextStyle(
@@ -142,9 +133,11 @@ class MarioHomeScreen extends StatelessWidget {
                               fontSize: 12,
                             ),
                           ),
-                          const SizedBox(height: 10),
+                          const SizedBox(
+                            height: 10,
+                          )
                         ],
-                      ),
+                      )
                     ],
                   ),
                 ),
@@ -153,16 +146,11 @@ class MarioHomeScreen extends StatelessWidget {
             Positioned(
               left: 0,
               top: 0,
-              child: Hero(
-                tag: name,
-                child: Image.asset(
-                  image,
-                ),
-              ),
+              child: Hero(tag: name, child: Image.asset(image)),
             ),
             Positioned(
-              top: 45,
               right: 0,
+              top: 45,
               child: IconButton(
                 onPressed: () {},
                 icon: const Icon(
@@ -171,7 +159,7 @@ class MarioHomeScreen extends StatelessWidget {
                   size: 24,
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),
