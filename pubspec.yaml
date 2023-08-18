@@ -71,5 +71,5 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/snkrs/
-    - assets/mario-bross/
+    - assets/threads/
 
