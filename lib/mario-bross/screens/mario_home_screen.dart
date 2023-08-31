@@ -1,9 +1,68 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_showcases/mario-bross/models/character.dart';
 import 'package:mobile_showcases/mario-bross/screens/character_detail.dart';
 import 'package:mobile_showcases/mario-bross/style/colors.dart';
 
-class MarioHomeScreen extends StatelessWidget {
+class MarioHomeScreen extends StatefulWidget {
   const MarioHomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<MarioHomeScreen> createState() => _MarioHomeScreenState();
+}
+
+class _MarioHomeScreenState extends State<MarioHomeScreen>
+    with SingleTickerProviderStateMixin {
+  final List<Character> items = [
+    Character(
+        name: 'Mario', image: 'assets/mario-bross/mario.png', color: marioRed),
+    Character(
+        name: 'Luigi',
+        image: 'assets/mario-bross/luigi.png',
+        color: luigiGreen),
+    Character(
+        name: 'Peach', image: 'assets/mario-bross/peach.png', color: peachPink),
+    Character(
+        name: 'Bowswer',
+        image: 'assets/mario-bross/bowser.png',
+        color: bowserYellow),
+  ];
+
+  late AnimationController _animationController;
+  late Animation<double> _animation;
+
+  int index = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+
+    _animation = CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeOutBack,
+    );
+
+    _startAnimation();
+  }
+
+  Future<void> _startAnimation() async {
+    for (int i = 0; i < items.length; i++) {
+      _animationController.reset();
+      await Future.delayed(const Duration(milliseconds: 300));
+      if (mounted) {
+        _animationController.forward();
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,41 +89,42 @@ class MarioHomeScreen extends StatelessWidget {
           ),
           ListView(
             children: [
-              const SizedBox(
-                height: 40,
-              ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _buildCharacterCard(context,
-                        image: 'assets/mario-bross/mario.png',
-                        name: 'Mario Bross',
-                        color: marioRed),
-                    _buildCharacterCard(context,
-                        image: 'assets/mario-bross/luigi.png',
-                        name: 'Luigi Bross',
-                        color: luigiGreen),
-                  ],
+                padding: const EdgeInsets.only(left: 16.0),
+                child: Wrap(
+                  spacing: 10,
+                  children: items
+                      .map(
+                        (e) => AnimatedBuilder(
+                          animation: _animation,
+                          builder: (context, child) {
+                            index += 1;
+
+                            final animationValue = _animation.value;
+                            final cardOpacity =
+                                animationValue >= (index + 1) / items.length
+                                    ? 1.0
+                                    : 0.0;
+                            final cardScale =
+                                Tween<double>(begin: 0.8, end: 1.0)
+                                    .transform(animationValue);
+
+                            return Transform.scale(
+                              scale: cardScale,
+                              child: child,
+                            );
+                          },
+                          child: _buildCharacterCard(
+                            context,
+                            image: e.image,
+                            name: e.name,
+                            color: e.color,
+                          ),
+                        ),
+                      )
+                      .toList(),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _buildCharacterCard(context,
-                        image: 'assets/mario-bross/peach.png',
-                        name: 'Peach',
-                        color: peachPink),
-                    _buildCharacterCard(context,
-                        image: 'assets/mario-bross/bowser.png',
-                        name: 'Bowswer',
-                        color: bowserYellow),
-                  ],
-                ),
-              )
             ],
           )
         ],
