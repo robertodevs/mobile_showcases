@@ -31,6 +31,16 @@ dependencies:
     sdk: flutter
 
 
+  google_fonts: ^5.1.0
+  dots_indicator: ^3.0.0
+  lottie: ^2.3.2
+  webview_flutter: ^4.2.0
+  macos_ui: ^1.7.0
+  font_awesome_flutter: ^10.1.0
+
+  device_preview: ^1.1.0
+
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -44,15 +54,10 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
+  
   test: any
   flutter_lints: ^2.0.1
-  dots_indicator: ^3.0.0
-  lottie: ^2.3.2
-  webview_flutter: ^4.2.0
-  macos_ui: ^1.7.0
-  font_awesome_flutter: ^10.1.0
-
-  device_preview: ^1.1.0
+  
 
   
 
@@ -71,5 +76,5 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/snkrs/
-    - assets/threads/
+    - assets/ecommerce/
 
